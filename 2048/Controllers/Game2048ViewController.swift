@@ -38,34 +38,35 @@ class Game2048ViewController: UIViewController, GameModelProtocol {
     func setupSwipe() {
         let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(sender:)))
         swipeUp.direction = .up
-        let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(sender:)))
-        swipeUp.direction = .down
-        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(sender:)))
-        swipeUp.direction = .left
-        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(sender:)))
-        swipeUp.direction = .right
+        
+//        let downSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(sender:)))
+//        swipeUp.direction = .down
+//        let leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(sender:)))
+//        swipeUp.direction = .left
+//        let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(sender:)))
+//        swipeUp.direction = .right
         
         view.addGestureRecognizer(swipeUp)
-        view.addGestureRecognizer(swipeDown)
-        view.addGestureRecognizer(swipeLeft)
-        view.addGestureRecognizer(swipeRight)
+//        view.addGestureRecognizer(downSwipe)
+//        view.addGestureRecognizer(leftSwipe)
+//        view.addGestureRecognizer(swipeRight)
     }
     
     @objc func handleSwipe(sender: UISwipeGestureRecognizer) {
         if sender.state == .ended {
             switch sender.direction {
             case .up:
-                model?.swipeUp()
+                model!.swipeUp()
                 model!.addTilesAnywhere(value: 2)
-            case .down:
-                model?.swipeDown()
-                model!.addTilesAnywhere(value: 2)
-            case .left:
-                model?.swipeLeft()
-                model!.addTilesAnywhere(value: 2)
-            case .right:
-                model?.swipeRight()
-                model!.addTilesAnywhere(value: 2)
+//            case .down:
+////                model?.swipeDown()
+//                model!.addTilesAnywhere(value: 2)
+//            case .left:
+////                model?.swipeLeft()
+//                model!.addTilesAnywhere(value: 2)
+//            case .right:
+////                model?.swipeRight()
+//                model!.addTilesAnywhere(value: 2)
             default:
                 break
             }

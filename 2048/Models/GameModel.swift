@@ -10,23 +10,15 @@ import UIKit
 enum Tile {
     case empty
     case tile(Int)
+    func getValue() -> Int? {
+            switch self {
+            case let .tile(value):
+                return value
+            default:
+                return nil
+            }
+    }
 }
-
-//enum Move {
-//    case up
-//    case down
-//    case left
-//    case right
-//}
-//
-//func move(direction: Move) -> Bool {
-//    switch direction {
-//    case .up:
-//    case .down:
-//    case .left:
-//    case .right:
-//    }
-//}
 
 struct Board {
     var tilesArray = [[Tile]]()
@@ -103,27 +95,27 @@ class GameModel {
 
     func swipeUp() {
         for y in 0..<gameBoard.dimension {
-            
+//            TODO
         }
     }
-    
-    func swipeDown() {
-        for y in 0..<gameBoard.dimension {
-            
-        }
-        
-    }
-    
-    func swipeLeft() {
-        for x in 0..<gameBoard.dimension {
-            
-        }
-        
-    }
-    
-    func swipeRight() {
-        for x in 0..<gameBoard.dimension {
-            
-        }
-    }
+//
+//    func swipeDown() {
+//        for y in 0..<gameBoard.dimension {
+//            break
+//        }
+//
+//    }
+//
+//    func swipeLeft() {
+//        for x in 0..<gameBoard.dimension {
+//            break
+//        }
+//
+//    }
+//
+//    func swipeRight() {
+//        for x in 0..<gameBoard.dimension {
+//            break
+//        }
+//    }
 }
